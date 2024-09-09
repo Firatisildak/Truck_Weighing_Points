@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DD23874F-3F56-4C2F-BF12-95A8BD967437}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Domain", "Core\GeotekProject.Domain\GeotekProject.Domain.csproj", "{692E5AB7-8852-4E0B-A56B-60B00C6160B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Application", "Core\GeotekProject.Application\GeotekProject.Application.csproj", "{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3BA75634-6AC7-452A-A492-520B0E87E8CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Infrastructure", "Infrastructure\GeotekProject.Infrastructure\GeotekProject.Infrastructure.csproj", "{A3B436E3-C592-472C-B2F3-B91AC412C2E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Persistence", "Infrastructure\GeotekProject.Persistence\GeotekProject.Persistence.csproj", "{04B6795B-A5DD-4225-A291-FBC0053D7262}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{95F1BDA5-54E2-497B-9C68-FF534CCE801D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.API", "Presentation\GeotekProject.API\GeotekProject.API.csproj", "{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{692E5AB7-8852-4E0B-A56B-60B00C6160B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692E5AB7-8852-4E0B-A56B-60B00C6160B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692E5AB7-8852-4E0B-A56B-60B00C6160B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692E5AB7-8852-4E0B-A56B-60B00C6160B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B436E3-C592-472C-B2F3-B91AC412C2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B436E3-C592-472C-B2F3-B91AC412C2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B436E3-C592-472C-B2F3-B91AC412C2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B436E3-C592-472C-B2F3-B91AC412C2E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B6795B-A5DD-4225-A291-FBC0053D7262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B6795B-A5DD-4225-A291-FBC0053D7262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B6795B-A5DD-4225-A291-FBC0053D7262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B6795B-A5DD-4225-A291-FBC0053D7262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{692E5AB7-8852-4E0B-A56B-60B00C6160B8} = {DD23874F-3F56-4C2F-BF12-95A8BD967437}
+		{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D} = {DD23874F-3F56-4C2F-BF12-95A8BD967437}
+		{A3B436E3-C592-472C-B2F3-B91AC412C2E6} = {3BA75634-6AC7-452A-A492-520B0E87E8CC}
+		{04B6795B-A5DD-4225-A291-FBC0053D7262} = {3BA75634-6AC7-452A-A492-520B0E87E8CC}
+		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948} = {95F1BDA5-54E2-497B-9C68-FF534CCE801D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {615BA214-1BE1-48C1-BA76-25E51A599F69}
+	EndGlobalSection
+EndGlobal
