@@ -12,9 +12,9 @@ namespace GeotekProject.Persistence
 {
     public static class ServiceRegistration
     {
-        public static void AddPersistenceServices(this IServiceCollection services)
+        public static void AddPersistenceServices(this IServiceCollection services,IConfiguration configuration)
         {
-            services.AddDbContext<GeotekProjectDbContext>(options =>options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<GeotekProjectDbContext>(options =>options.UseSqlServer(configuration.GetConnectionString("SqlServer")));
 
         }
     }

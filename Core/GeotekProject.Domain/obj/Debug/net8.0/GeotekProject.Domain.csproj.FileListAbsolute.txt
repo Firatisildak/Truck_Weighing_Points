@@ -1,0 +1,12 @@
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\bin\Debug\net8.0\GeotekProject.Domain.deps.json
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\bin\Debug\net8.0\GeotekProject.Domain.dll
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\bin\Debug\net8.0\GeotekProject.Domain.pdb
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\GeotekProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\GeotekProject.Domain.AssemblyInfoInputs.cache
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\GeotekProject.Domain.AssemblyInfo.cs
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\GeotekProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\GeotekProject.Domain.sourcelink.json
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\GeotekProject.Domain.dll
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\refint\GeotekProject.Domain.dll
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\GeotekProject.Domain.pdb
+C:\Users\firat\Desktop\GeotekProject\Core\GeotekProject.Domain\obj\Debug\net8.0\ref\GeotekProject.Domain.dll

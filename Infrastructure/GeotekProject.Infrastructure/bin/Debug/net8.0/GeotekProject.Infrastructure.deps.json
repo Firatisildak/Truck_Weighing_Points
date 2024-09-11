@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "GeotekProject.Infrastructure/1.0.0": {
+        "dependencies": {
+          "GeotekProject.Application": "1.0.0"
+        },
+        "runtime": {
+          "GeotekProject.Infrastructure.dll": {}
+        }
+      },
+      "GeotekProject.Application/1.0.0": {
+        "dependencies": {
+          "GeotekProject.Domain": "1.0.0"
+        },
+        "runtime": {
+          "GeotekProject.Application.dll": {}
+        }
+      },
+      "GeotekProject.Domain/1.0.0": {
+        "runtime": {
+          "GeotekProject.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GeotekProject.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GeotekProject.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GeotekProject.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
