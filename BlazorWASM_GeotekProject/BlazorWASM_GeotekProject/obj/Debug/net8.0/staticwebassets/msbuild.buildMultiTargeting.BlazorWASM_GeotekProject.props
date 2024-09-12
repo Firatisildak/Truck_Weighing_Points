@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BlazorWASM_GeotekProject.props" />
+</Project>

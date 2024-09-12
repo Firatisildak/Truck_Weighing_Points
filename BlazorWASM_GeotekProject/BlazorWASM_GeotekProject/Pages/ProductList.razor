@@ -1,0 +1,54 @@
+﻿@page "/productList"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+
+<h3>Product List</h3>
+<p>
+    <a href="/addproduct" class="btn btn-info"> Add New Product</a>
+</p>
+
+@if (prodList == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prod in prodList)
+            {
+                <tr>
+                    <td>@prod.ProdId</td>
+                    <td>@prod.ProdName</td>
+                    <td>@prod.Price</td>
+                    <td>
+                        <a href="/editproduct/@prod.ProdId" class="btn btn-primary">Edit</a>
+                        <a href="/deleteproduct/@prod.ProdId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Product[] prodList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadProdData();
+    }
+
+    private async Task LoadProdData()
+    {
+        // URL'yi relative yapabilirsiniz veya düzgün bir API endpoint'i belirtmelisiniz.
+        prodList = await Http.GetFromJsonAsync<Product[]>("https://localhost:44356/api/Products/GetProducts");
+    }
+}
