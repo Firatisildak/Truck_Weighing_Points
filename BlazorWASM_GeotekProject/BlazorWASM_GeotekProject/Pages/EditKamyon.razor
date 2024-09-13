@@ -1,0 +1,61 @@
+﻿@page "/editKamyon/{id}"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Kamyon Düzenle</h3>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="KamyonId" class="control-label">Kamyon ID</label>
+                <input id="KamyonId" class="form-control" @bind="kamyon.KamyonId" readonly />
+            </div>
+            <div class="form-group">
+                <label for="Plaka" class="control-label">Plaka</label>
+                <input id="Plaka" class="form-control" @bind="kamyon.Plaka" />
+            </div>
+            <div class="form-group">
+                <label for="Hammadde" class="control-label">Hammadde</label>
+                <input id="Hammadde" class="form-control" @bind="kamyon.Hammadde" />
+            </div>
+            <div class="form-group">
+                <label for="Miktar" class="control-label">Miktar</label>
+                <input id="Miktar" class="form-control" @bind="kamyon.Miktar" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="UpdateKamyonInfo" value="Güncelle" />
+                <input type="button" class="btn btn-danger" @onclick="Cancel" value="İptal" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+    private Kamyon kamyon = new Kamyon();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Kamyonu getirmek için doğru URL formatını kullanın.
+        kamyon = await Http.GetFromJsonAsync<Kamyon>($"https://localhost:44356/api/Kamyon/GetKamyon/{id}");
+    }
+
+    private async Task UpdateKamyonInfo()
+    {
+        // Kamyon güncellemesi için PUT isteği gönderin.
+        await Http.PutAsJsonAsync($"https://localhost:44356/api/Kamyon/UpdateKamyon/{id}", kamyon);
+        NavigationManager.NavigateTo("kamyonList");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("kamyonList");
+    }
+}

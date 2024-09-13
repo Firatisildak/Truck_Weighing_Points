@@ -1,0 +1,55 @@
+﻿@page "/kamyonList"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+
+<h3>Kamyon Listesi</h3>
+<p>
+    <a href="/addkamyon" class="btn btn-info">Yeni Kamyon Ekle</a>
+</p>
+
+@if (kamyonList == null)
+{
+    <p>Yükleniyor...</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Plaka</th>
+                <th>Hammadde</th>
+                <th>Miktar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kamyon in kamyonList)
+            {
+                <tr>
+                    <td>@kamyon.KamyonId</td>
+                    <td>@kamyon.Plaka</td>
+                    <td>@kamyon.Hammadde</td>
+                    <td>@kamyon.Miktar</td>
+                    <td>
+                        <a href="/editkamyon/@kamyon.KamyonId" class="btn btn-primary">Düzenle</a>
+                        <a href="/deletekamyon/@kamyon.KamyonId" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Kamyon[] kamyonList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadKamyonData();
+    }
+
+    private async Task LoadKamyonData()
+    {
+        kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("https://localhost:44356/api/Kamyon/GetKamyonlar");
+    }
+}

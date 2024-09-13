@@ -1,0 +1,56 @@
+﻿@page "/deleteKamyon/{id}"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Kamyon Sil</h3>
+<p>Bu kamyonu silmek istediğinize emin misiniz? ID: <b>@id</b></p>
+<br />
+<div class="col-md-4">
+    <table class="table table-bordered">
+        <tr>
+            <td>KID</td>
+            <td>@kamyon.KamyonId</td>
+        </tr>
+        <tr>
+            <td>Plaka</td>
+            <td>@kamyon.Plaka</td>
+        </tr>
+        <tr>
+            <td>Hammadde</td>
+            <td>@kamyon.Hammadde</td>
+        </tr>
+        <tr>
+            <td>Miktar</td>
+            <td>@kamyon.Miktar</td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <input type="button" value="Sil" @onclick="DeleteKamyonInfo" class="btn btn-danger" />
+        <input type="button" value="İptal" @onclick="Cancel" class="btn btn-info" />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+    private Kamyon kamyon = new Kamyon();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Kamyonu getirmek için doğru URL formatını kullanın.
+        kamyon = await Http.GetFromJsonAsync<Kamyon>($"https://localhost:44356/api/Kamyon/GetKamyon/{id}");
+    }
+
+    private async Task DeleteKamyonInfo()
+    {
+        // Kamyon silme işlemi için DELETE isteği gönderin.
+        await Http.DeleteAsync($"https://localhost:44356/api/Kamyon/DeleteKamyon/{id}");
+        NavigationManager.NavigateTo("kamyonList");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("kamyonList");
+    }
+}

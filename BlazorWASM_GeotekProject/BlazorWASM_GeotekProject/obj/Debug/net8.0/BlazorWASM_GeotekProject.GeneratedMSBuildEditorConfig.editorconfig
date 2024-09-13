@@ -26,28 +26,28 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/AddProduct.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUHJvZHVjdC5yYXpvcg==
+[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/AddKamyon.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkS2FteW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/DeleteProduct.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlUHJvZHVjdC5yYXpvcg==
+[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/DeleteKamyon.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlS2FteW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/EditProduct.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFByb2R1Y3QucmF6b3I=
+[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/EditKamyon.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEthbXlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/ProductList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdExpc3QucmF6b3I=
+[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/KamyonList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS2FteW9uTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/Weather.razor]

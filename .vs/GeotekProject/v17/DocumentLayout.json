@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\firat\\Desktop\\GeotekProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}|Presentation\\GeotekProject.API\\GeotekProject.API.csproj|c:\\users\\firat\\desktop\\geotekproject\\presentation\\geotekproject.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}|Presentation\\GeotekProject.API\\GeotekProject.API.csproj|solutionrelative:presentation\\geotekproject.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{692E5AB7-8852-4E0B-A56B-60B00C6160B8}|Core\\GeotekProject.Domain\\GeotekProject.Domain.csproj|c:\\users\\firat\\desktop\\geotekproject\\core\\geotekproject.domain\\entities\\kamyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{692E5AB7-8852-4E0B-A56B-60B00C6160B8}|Core\\GeotekProject.Domain\\GeotekProject.Domain.csproj|solutionrelative:core\\geotekproject.domain\\entities\\kamyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{04B6795B-A5DD-4225-A291-FBC0053D7262}|Infrastructure\\GeotekProject.Persistence\\GeotekProject.Persistence.csproj|c:\\users\\firat\\desktop\\geotekproject\\infrastructure\\geotekproject.persistence\\servicesregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,14 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}|Presentation\\GeotekProject.API\\GeotekProject.API.csproj|c:\\users\\firat\\desktop\\geotekproject\\presentation\\geotekproject.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}|Presentation\\GeotekProject.API\\GeotekProject.API.csproj|solutionrelative:presentation\\geotekproject.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{692E5AB7-8852-4E0B-A56B-60B00C6160B8}|Core\\GeotekProject.Domain\\GeotekProject.Domain.csproj|c:\\users\\firat\\desktop\\geotekproject\\core\\geotekproject.domain\\entities\\kamyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{692E5AB7-8852-4E0B-A56B-60B00C6160B8}|Core\\GeotekProject.Domain\\GeotekProject.Domain.csproj|solutionrelative:core\\geotekproject.domain\\entities\\kamyon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\firat\\Desktop\\GeotekProject\\Infrastructure\\GeotekProject.Persistence\\Migrations\\20240911165525_mig_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\GeotekProject.Persistence\\Migrations\\20240911165525_mig_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,34 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20240911165525_mig_1.cs",
-              "DocumentMoniker": "C:\\Users\\firat\\Desktop\\GeotekProject\\Infrastructure\\GeotekProject.Persistence\\Migrations\\20240911165525_mig_1.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\GeotekProject.Persistence\\Migrations\\20240911165525_mig_1.cs",
-              "ToolTip": "C:\\Users\\firat\\Desktop\\GeotekProject\\Infrastructure\\GeotekProject.Persistence\\Migrations\\20240911165525_mig_1.cs",
-              "RelativeToolTip": "Infrastructure\\GeotekProject.Persistence\\Migrations\\20240911165525_mig_1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T16:55:25.874Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\firat\\Desktop\\GeotekProject\\Presentation\\GeotekProject.API\\appsettings.json",
-              "RelativeDocumentMoniker": "Presentation\\GeotekProject.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\firat\\Desktop\\GeotekProject\\Presentation\\GeotekProject.API\\appsettings.json",
-              "RelativeToolTip": "Presentation\\GeotekProject.API\\appsettings.json",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAABPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-10T18:35:33.475Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -72,8 +38,7 @@
               "RelativeToolTip": "Infrastructure\\GeotekProject.Persistence\\ServicesRegistration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAACFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T16:52:24.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T16:52:24.343Z"
             },
             {
               "$type": "Document",
@@ -85,8 +50,7 @@
               "RelativeToolTip": "Presentation\\GeotekProject.API\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T16:52:06.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T16:52:06.136Z"
             },
             {
               "$type": "Document",
@@ -98,18 +62,17 @@
               "RelativeToolTip": "Infrastructure\\GeotekProject.Persistence\\Contexts\\GeotekProjectDbContext.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAABAAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T18:12:14.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-10T18:12:14.063Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Kamyon.cs",
               "DocumentMoniker": "C:\\Users\\firat\\Desktop\\GeotekProject\\Core\\GeotekProject.Domain\\Entities\\Kamyon.cs",
               "RelativeDocumentMoniker": "Core\\GeotekProject.Domain\\Entities\\Kamyon.cs",
               "ToolTip": "C:\\Users\\firat\\Desktop\\GeotekProject\\Core\\GeotekProject.Domain\\Entities\\Kamyon.cs",
               "RelativeToolTip": "Core\\GeotekProject.Domain\\Entities\\Kamyon.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAdAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T17:59:10.444Z",
               "EditorCaption": ""
