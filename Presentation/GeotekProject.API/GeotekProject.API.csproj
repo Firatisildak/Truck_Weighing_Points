@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\GeotekProject.Application\GeotekProject.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\GeotekProject.Persistence\GeotekProject.Persistence.csproj" />
   </ItemGroup>

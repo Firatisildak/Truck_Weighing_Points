@@ -142,3 +142,4 @@ C:\Users\firat\Desktop\GeotekProject\Presentation\GeotekProject.API\obj\Debug\ne
 C:\Users\firat\Desktop\GeotekProject\Presentation\GeotekProject.API\obj\Debug\net8.0\GeotekProject.API.pdb
 C:\Users\firat\Desktop\GeotekProject\Presentation\GeotekProject.API\obj\Debug\net8.0\GeotekProject.API.genruntimeconfig.cache
 C:\Users\firat\Desktop\GeotekProject\Presentation\GeotekProject.API\obj\Debug\net8.0\ref\GeotekProject.API.dll
+C:\Users\firat\Desktop\GeotekProject\Presentation\GeotekProject.API\obj\Debug\net8.0\GeotekProject.API.MvcApplicationPartsAssemblyInfo.cs

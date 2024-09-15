@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace GeotekProject.Domain.Entities
 {
-    public class Bosaltma:BaseEntity
+    public class Bosaltma : BaseEntity
     {
-        public bool BosaltmaDurumu {get; set;}
-        public Kamyon Kamyon {get; set;}
+        public bool BosaltmaDurumu { get; set; }
+        public Guid KamyonId { get; set; }
+        public Kamyon Kamyon { get; set; }
     }
 }

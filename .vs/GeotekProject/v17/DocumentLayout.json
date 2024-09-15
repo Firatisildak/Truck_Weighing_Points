@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\firat\\Desktop\\GeotekProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}|Core\\GeotekProject.Application\\GeotekProject.Application.csproj|c:\\users\\firat\\desktop\\geotekproject\\core\\geotekproject.application\\interfaces\\kantar\\ikantarrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}|Core\\GeotekProject.Application\\GeotekProject.Application.csproj|solutionrelative:core\\geotekproject.application\\interfaces\\kantar\\ikantarrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\firat\\Desktop\\GeotekProject\\Infrastructure\\GeotekProject.Persistence\\Migrations\\20240915072533_mig_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\GeotekProject.Persistence\\Migrations\\20240915072533_mig_1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}|Core\\GeotekProject.Application\\GeotekProject.Application.csproj|c:\\users\\firat\\desktop\\geotekproject\\core\\geotekproject.application\\interfaces\\bosaltma\\ibosaltmarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}|Core\\GeotekProject.Application\\GeotekProject.Application.csproj|solutionrelative:core\\geotekproject.application\\interfaces\\bosaltma\\ibosaltmarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IKantarRepository.cs",
-              "DocumentMoniker": "C:\\Users\\firat\\Desktop\\GeotekProject\\Core\\GeotekProject.Application\\Interfaces\\Kantar\\IKantarRepository.cs",
-              "RelativeDocumentMoniker": "Core\\GeotekProject.Application\\Interfaces\\Kantar\\IKantarRepository.cs",
-              "ToolTip": "C:\\Users\\firat\\Desktop\\GeotekProject\\Core\\GeotekProject.Application\\Interfaces\\Kantar\\IKantarRepository.cs",
-              "RelativeToolTip": "Core\\GeotekProject.Application\\Interfaces\\Kantar\\IKantarRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA8AAAA",
+              "Title": "20240915072533_mig_1.cs",
+              "DocumentMoniker": "C:\\Users\\firat\\Desktop\\GeotekProject\\Infrastructure\\GeotekProject.Persistence\\Migrations\\20240915072533_mig_1.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\GeotekProject.Persistence\\Migrations\\20240915072533_mig_1.cs",
+              "ToolTip": "C:\\Users\\firat\\Desktop\\GeotekProject\\Infrastructure\\GeotekProject.Persistence\\Migrations\\20240915072533_mig_1.cs",
+              "RelativeToolTip": "Infrastructure\\GeotekProject.Persistence\\Migrations\\20240915072533_mig_1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-14T16:03:24.798Z",
+              "WhenOpened": "2024-09-15T07:25:33.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IBosaltmaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\firat\\Desktop\\GeotekProject\\Core\\GeotekProject.Application\\Interfaces\\Bosaltma\\IBosaltmaRepository.cs",
+              "RelativeDocumentMoniker": "Core\\GeotekProject.Application\\Interfaces\\Bosaltma\\IBosaltmaRepository.cs",
+              "ToolTip": "C:\\Users\\firat\\Desktop\\GeotekProject\\Core\\GeotekProject.Application\\Interfaces\\Bosaltma\\IBosaltmaRepository.cs",
+              "RelativeToolTip": "Core\\GeotekProject.Application\\Interfaces\\Bosaltma\\IBosaltmaRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T07:20:02.75Z",
               "EditorCaption": ""
             }
           ]

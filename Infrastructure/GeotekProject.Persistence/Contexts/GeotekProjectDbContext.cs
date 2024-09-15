@@ -2,14 +2,12 @@
 using GeotekProject.Domain.Entities.Common;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace GeotekProject.Persistence.Contexts
+namespace GeotekProject.Persistence.Context
 {
-    public class GeotekProjectDbContext:DbContext
+    public class GeotekProjectDbContext : DbContext
     {
         public GeotekProjectDbContext(DbContextOptions options) : base(options) { }
 
@@ -19,15 +17,20 @@ namespace GeotekProject.Persistence.Contexts
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            var datas = ChangeTracker.Entries<BaseEntity>();
-            foreach (var data in datas)
+            foreach (var entry in ChangeTracker.Entries<BaseEntity>())
             {
-                var _ = data.State switch
+                if (entry.State == EntityState.Added)
                 {
-                    EntityState.Added => data.Entity.CreatedDate = DateTime.Now,
-                    _ => DateTime.Now,
-                };
+                    entry.Entity.CreatedDate = DateTime.UtcNow;
+                    entry.Entity.Id = Guid.NewGuid();
+                }
+                else if (entry.State == EntityState.Modified)
+                {
+                    entry.Property(e => e.CreatedDate).IsModified = false;
+                    entry.Property(e => e.Id).IsModified = false;
+                }
             }
+
             return await base.SaveChangesAsync(cancellationToken);
         }
     }
