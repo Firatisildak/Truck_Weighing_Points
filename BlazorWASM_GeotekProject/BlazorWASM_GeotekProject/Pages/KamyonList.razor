@@ -22,18 +22,18 @@ else
                 <th>Plaka</th>
                 <th>Hammadde</th>
                 <th>Miktar</th>
-                <th>Oluşturulma Tarihi</th> <!-- CreatedDate için yeni sütun eklendi -->
+                <th>Oluşturulma Tarihi</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var kamyon in kamyonList)
             {
                 <tr>
-                    <td>@kamyon.Id</td>  <!-- Id yerine Guid Id kullanılıyor -->
+                    <td>@kamyon.Id</td> 
                     <td>@kamyon.Plaka</td>
                     <td>@kamyon.Hammadde</td>
                     <td>@kamyon.Miktar</td>
-                    <td>@kamyon.CreatedDate.ToString("dd/MM/yyyy")</td> <!-- Oluşturulma tarihini formatlayarak gösteriyoruz -->
+                    <td>@kamyon.CreatedDate.ToString("dd/MM/yyyy")</td>
                     <td>
                         <a href="/editkamyon/@kamyon.Id" class="btn btn-primary">Düzenle</a>
                         <a href="/deletekamyon/@kamyon.Id" class="btn btn-danger">Sil</a>

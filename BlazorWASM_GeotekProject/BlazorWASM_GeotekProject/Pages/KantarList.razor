@@ -32,7 +32,7 @@ else
                     <td>@kamyon.Hammadde</td>
                     <td>@kamyon.Miktar</td>
                     <td>@kamyon.CreatedDate.ToString("dd/MM/yyyy")</td>
-                    <td>@(kantar?.KamyonKg ?? "N/A")</td>
+                    <td>@(kantar?.KamyonKg != null ? kantar.KamyonKg.ToString() : "N/A")</td>
                     <td>@(kantar?.OnayDurum == true ? "Onaylı" : "Onaysız")</td>
                     <td>
                         <a href="/editkamyon/@kamyon.Id" class="btn btn-primary">Düzenle</a>
@@ -56,6 +56,6 @@ else
     private async Task LoadData()
     {
         kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
-        kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantar"); // Kantar verilerini çek
+        kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantar"); 
     }
 }

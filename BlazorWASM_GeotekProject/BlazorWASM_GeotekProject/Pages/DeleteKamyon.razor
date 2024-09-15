@@ -42,13 +42,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Kamyon bilgilerini almak için doğru URL'yi kullanın.
         kamyon = await Http.GetFromJsonAsync<Kamyon>($"http://localhost:5129/api/Kamyons/GetByIdKamyon?id={id}");
     }
 
     private async Task DeleteKamyonInfo()
     {
-        // Kamyon silme işlemi için DELETE isteği gönderin.
         await Http.DeleteAsync($"http://localhost:5129/api/Kamyons/RemoveKamyon?id={id}");
         NavigationManager.NavigateTo("kamyonList");
     }

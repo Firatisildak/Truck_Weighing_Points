@@ -39,13 +39,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Kamyon bilgilerini almak için API çağrısı.
         kamyon = await Http.GetFromJsonAsync<Kamyon>($"http://localhost:5129/api/Kamyons/GetByIdKamyon?id={id}");
     }
 
     private async Task UpdateKamyonInfo()
     {
-        // Kamyon güncellemesi için PUT isteği.
         await Http.PutAsJsonAsync($"http://localhost:5129/api/Kamyons/UpdateKamyon/", kamyon);
         NavigationManager.NavigateTo("kamyonList");
     }

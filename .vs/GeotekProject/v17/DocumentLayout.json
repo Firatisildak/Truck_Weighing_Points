@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Core\\GeotekProject.Domain\\Entities\\Kantar.cs",
               "ToolTip": "C:\\Users\\firat\\Desktop\\GeotekProject\\Core\\GeotekProject.Domain\\Entities\\Kantar.cs",
               "RelativeToolTip": "Core\\GeotekProject.Domain\\Entities\\Kantar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-15T13:04:25.149Z",
               "EditorCaption": ""
@@ -59,8 +59,7 @@
               "RelativeToolTip": "Core\\GeotekProject.Domain\\Entities\\Bosaltma.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T13:03:01.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T13:03:01.877Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Presentation\\GeotekProject.API\\Program.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAcwB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T08:39:28.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T08:39:28.822Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "Core\\GeotekProject.Domain\\Entities\\Common\\BaseEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T08:34:35.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T08:34:35.173Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "Presentation\\GeotekProject.API\\Controllers\\KamyonsController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T08:02:37.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T08:02:37.522Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "Core\\GeotekProject.Domain\\Entities\\Kamyon.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T07:47:07.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T07:47:07.031Z"
             }
           ]
         }
