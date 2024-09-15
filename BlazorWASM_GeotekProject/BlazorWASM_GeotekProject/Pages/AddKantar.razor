@@ -1,0 +1,56 @@
+﻿@page "/addKantar"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Yeni Kantar Kaydı Ekle</h3>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="KamyonKgInput">Kamyon Ağırlığı (Kg)</label>
+                <input id="KamyonKgInput" class="form-control" type="number" @bind="newKantar.KamyonKg" />
+            </div>
+            <div class="form-group">
+                <label for="OnayDurumInput">Onay Durumu</label>
+                <select id="OnayDurumInput" class="form-control" @bind="newKantar.OnayDurum">
+                    <option value="true">Onaylı</option>
+                    <option value="false">Onaysız</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="KamyonIdInput">Kamyon ID</label>
+                <input id="KamyonIdInput" class="form-control" @bind="newKantar.KamyonId" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="AddKantarInfo" value="Kaydet" />
+                <input type="button" class="btn btn-danger" @onclick="Cancel" value="İptal" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    private Kantar newKantar = new Kantar();
+
+    protected override void OnInitialized()
+    {
+        newKantar.KamyonId = Guid.NewGuid(); 
+    }
+
+    private async Task AddKantarInfo()
+    {
+        await Http.PostAsJsonAsync("http://localhost:5129/api/Kantars/CreateKantar", newKantar);
+        NavigationManager.NavigateTo("/kantarList"); 
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/kamyonList");
+    }
+}

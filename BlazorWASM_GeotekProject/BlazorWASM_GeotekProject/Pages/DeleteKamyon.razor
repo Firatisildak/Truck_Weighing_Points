@@ -10,7 +10,11 @@
     <table class="table table-bordered">
         <tr>
             <td>KID</td>
-            <td>@kamyon.KamyonId</td>
+            <td>@kamyon.Id</td>
+        </tr>
+        <tr>
+            <td>Oluşturulma Tarihi</td>
+            <td>@kamyon.CreatedDate</td>
         </tr>
         <tr>
             <td>Plaka</td>
@@ -38,14 +42,14 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // Kamyonu getirmek için doğru URL formatını kullanın.
-        kamyon = await Http.GetFromJsonAsync<Kamyon>($"https://localhost:44356/api/Kamyon/GetKamyon/{id}");
+        // Kamyon bilgilerini almak için doğru URL'yi kullanın.
+        kamyon = await Http.GetFromJsonAsync<Kamyon>($"http://localhost:5129/api/Kamyons/GetByIdKamyon?id={id}");
     }
 
     private async Task DeleteKamyonInfo()
     {
         // Kamyon silme işlemi için DELETE isteği gönderin.
-        await Http.DeleteAsync($"https://localhost:44356/api/Kamyon/DeleteKamyon/{id}");
+        await Http.DeleteAsync($"http://localhost:5129/api/Kamyons/RemoveKamyon?id={id}");
         NavigationManager.NavigateTo("kamyonList");
     }
 

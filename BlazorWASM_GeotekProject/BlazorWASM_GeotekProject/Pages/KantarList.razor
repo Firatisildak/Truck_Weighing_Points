@@ -1,0 +1,61 @@
+﻿@page "/kantarList"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+
+<h3>Kamyon Listesi</h3>
+
+@if (kamyonList == null || kantarList == null)
+{
+    <p>Yükleniyor...</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Plaka</th>
+                <th>Hammadde</th>
+                <th>Miktar</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>Kamyon Ağırlığı (Kg)</th> 
+                <th>Onay Durumu</th> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kamyon in kamyonList)
+            {
+                var kantar = kantarList.FirstOrDefault(k => k.KamyonId == kamyon.Id);
+                <tr>
+                    <td>@kamyon.Id</td>
+                    <td>@kamyon.Plaka</td>
+                    <td>@kamyon.Hammadde</td>
+                    <td>@kamyon.Miktar</td>
+                    <td>@kamyon.CreatedDate.ToString("dd/MM/yyyy")</td>
+                    <td>@(kantar?.KamyonKg ?? "N/A")</td>
+                    <td>@(kantar?.OnayDurum == true ? "Onaylı" : "Onaysız")</td>
+                    <td>
+                        <a href="/editkamyon/@kamyon.Id" class="btn btn-primary">Düzenle</a>
+                        <a href="/deletekamyon/@kamyon.Id" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Kamyon[] kamyonList;
+    private Kantar[] kantarList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
+        kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantar"); // Kantar verilerini çek
+    }
+}

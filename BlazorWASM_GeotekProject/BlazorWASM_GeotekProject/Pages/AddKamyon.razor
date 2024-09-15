@@ -2,6 +2,7 @@
 @using BlazorWASM_GeotekProject.Models
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <h3>Yeni Kamyon Ekle</h3>
 <hr />
@@ -9,20 +10,16 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
-                <label for="KamyonId" class="control-label">Kamyon ID</label>
-                <input id="KamyonId" class="form-control" @bind="kamyon.KamyonId" readonly />
+                <label for="PlakaInput">Plaka</label>
+                <input id="PlakaInput" class="form-control" @bind="newKamyon.Plaka" />
             </div>
             <div class="form-group">
-                <label for="Plaka" class="control-label">Plaka</label>
-                <input id="Plaka" class="form-control" @bind="kamyon.Plaka" />
+                <label for="HammaddeInput">Hammadde</label>
+                <input id="HammaddeInput" class="form-control" @bind="newKamyon.Hammadde" />
             </div>
             <div class="form-group">
-                <label for="Hammadde" class="control-label">Hammadde</label>
-                <input id="Hammadde" class="form-control" @bind="kamyon.Hammadde" />
-            </div>
-            <div class="form-group">
-                <label for="Miktar" class="control-label">Miktar</label>
-                <input id="Miktar" class="form-control" @bind="kamyon.Miktar" />
+                <label for="MiktarInput">Miktar</label>
+                <input id="MiktarInput" class="form-control" type="number" @bind="newKamyon.Miktar" />
             </div>
         </div>
     </div>
@@ -30,24 +27,25 @@
         <div class="col-md-4">
             <div class="form-group">
                 <input type="button" class="btn btn-success" @onclick="AddKamyonInfo" value="Kaydet" />
-                <input type="button" class="btn btn-danger" @onclick="Cancel" value="İptal" />
             </div>
         </div>
     </div>
 </form>
 
 @code {
-    private Kamyon kamyon = new Kamyon();
+    private Kamyon newKamyon = new Kamyon();
+
+
+    protected override void OnInitialized()
+    {
+        newKamyon.Id = Guid.NewGuid();
+        newKamyon.CreatedDate = DateTime.Now;
+    }
 
     private async Task AddKamyonInfo()
     {
-        // Post işlemi için doğru URL formatını kullanın.
-        await Http.PostAsJsonAsync("https://localhost:44356/api/Kamyon/AddKamyon", kamyon);
-        NavigationManager.NavigateTo("kamyonList");
-    }
-
-    private void Cancel()
-    {
-        NavigationManager.NavigateTo("kamyonList");
+        await Http.PostAsJsonAsync("http://localhost:5129/api/Kamyons/CreateKamyon", newKamyon);
+        await JSRuntime.InvokeVoidAsync("alert", "Kayıt Başarılı");
+       
     }
 }

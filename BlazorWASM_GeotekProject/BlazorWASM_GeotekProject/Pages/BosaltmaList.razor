@@ -1,0 +1,53 @@
+﻿@page "/bosaltmaList"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+
+<h3>Boşaltma Listesi</h3>
+<p>
+    <a href="/addBosaltma" class="btn btn-info">Yeni Boşaltma Ekle</a>
+</p>
+
+@if (bosaltmaList == null)
+{
+    <p>Yükleniyor...</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kamyon ID</th>
+                <th>Kamyon Plaka</th>
+                <th>Boşaltma Durumu</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bosaltma in bosaltmaList)
+            {
+                <tr>
+                    <td>@bosaltma.KamyonId</td>
+                    <td>@bosaltma.Kamyon.Plaka</td>
+                    <td>@(bosaltma.BosaltmaDurumu ? "Boşaltıldı" : "Boşaltılmadı")</td>
+                    <td>
+                        <a href="/editBosaltma/@bosaltma.KamyonId" class="btn btn-primary">Düzenle</a>
+                        <a href="/deleteBosaltma/@bosaltma.KamyonId" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Bosaltma[] bosaltmaList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadBosaltmaData();
+    }
+
+    private async Task LoadBosaltmaData()
+    {
+        bosaltmaList = await Http.GetFromJsonAsync<Bosaltma[]>("http://localhost:5129/api/Bosaltmas/GetAllBosaltma");
+    }
+}

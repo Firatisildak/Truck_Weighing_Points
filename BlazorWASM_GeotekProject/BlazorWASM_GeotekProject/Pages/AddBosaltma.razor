@@ -1,0 +1,47 @@
+﻿@page "/addBosaltma"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>Yeni Boşaltma Kaydı Ekle</h3>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="BosaltmaDurumuInput">Boşaltma Durumu</label>
+                <select id="BosaltmaDurumuInput" class="form-control" @bind="newBosaltma.BosaltmaDurumu">
+                    <option value="true">Boşaltıldı</option>
+                    <option value="false">Boşaltılmadı</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="KamyonIdInput">Kamyon ID</label>
+                <input id="KamyonIdInput" class="form-control" @bind="newBosaltma.KamyonId" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="AddBosaltmaInfo" value="Kaydet" />
+                <input type="button" class="btn btn-danger" @onclick="Cancel" value="İptal" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    private Bosaltma newBosaltma = new Bosaltma();
+
+    private async Task AddBosaltmaInfo()
+    {
+        await Http.PostAsJsonAsync("http://localhost:5129/api/Bosaltmas/CreateBosaltma", newBosaltma);
+        NavigationManager.NavigateTo("/bosaltmaList");
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/kamyonList");
+    }
+}
