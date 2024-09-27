@@ -32,6 +32,7 @@ namespace GeotekProject.Persistence.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     BosaltmaDurumu = table.Column<bool>(type: "bit", nullable: false),
+                    Plaka = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     KamyonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -53,6 +54,7 @@ namespace GeotekProject.Persistence.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     KamyonKg = table.Column<int>(type: "int", nullable: false),
                     OnayDurum = table.Column<bool>(type: "bit", nullable: false),
+                    Plaka = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     KamyonId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

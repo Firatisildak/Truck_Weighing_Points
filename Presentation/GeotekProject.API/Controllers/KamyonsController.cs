@@ -32,7 +32,7 @@ namespace GeotekProject.API.Controllers
         public async Task<bool> RemoveKamyon(string id) => await _kamyonRepository.RemoveAsync(id);
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetKamyonById(string kamyonId) => Ok(await _kamyonRepository.GetById(kamyonId));
+        public async Task<IActionResult> GetKamyonById(string Plaka) => Ok(await _kamyonRepository.GetById(Plaka));
 
 
     }

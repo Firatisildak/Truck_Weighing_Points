@@ -1,0 +1,97 @@
+﻿@page "/editKantar/{id}"
+@using BlazorWASM_GeotekProject.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<h3>Kantar Kaydı Düzenle</h3>
+<hr />
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="KamyonKgInput">Kamyon Ağırlığı (Kg)</label>
+                <input id="KamyonKgInput" class="form-control" type="number" @bind="kantar.KamyonKg" />
+            </div>
+            <div class="form-group">
+                <label>Onay Durumu</label>
+                <div class="form-check">
+                    <input type="radio" id="onayli" name="OnayDurum" class="form-check-input" value="true"
+                           @onchange="(e) => kantar.OnayDurum = true" checked="@kantar.OnayDurum" />
+                    <label class="form-check-label" for="onayli">Onaylı</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="onaysiz" name="OnayDurum" class="form-check-input" value="false"
+                           @onchange="(e) => kantar.OnayDurum = false" checked="@(!kantar.OnayDurum)" />
+                    <label class="form-check-label" for="onaysiz">Onaysız</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="PlakaInput">Kamyon Plaka</label>
+                <input id="PlakaInput" class="form-control" @bind="kantar.Plaka" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="button" class="btn btn-success" @onclick="UpdateKantarInfo" value="Güncelle" />
+                <input type="button" class="btn btn-danger" @onclick="Cancel" value="İptal" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+    private Kantar kantar = new Kantar();
+    private Kamyon[] kamyonList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            kantar = await Http.GetFromJsonAsync<Kantar>($"http://localhost:5129/api/Kantars/GetByIdKantar?id={id}");
+            kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Bir hata oluştu: {ex.Message}");
+        }
+    }
+
+    private async Task UpdateKantarInfo()
+    {
+        if (string.IsNullOrWhiteSpace(kantar.Plaka))
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Plaka boş olamaz.");
+            return;
+        }
+
+        var selectedKamyon = kamyonList.FirstOrDefault(k => k.Plaka == kantar.Plaka);
+        if (selectedKamyon != null)
+        {
+            kantar.KamyonId = selectedKamyon.Id;
+            try
+            {
+                await Http.PutAsJsonAsync("http://localhost:5129/api/Kantars/UpdateKantar", kantar);
+                await JSRuntime.InvokeVoidAsync("alert", "Güncelleme Başarılı");
+                NavigationManager.NavigateTo("/kantarList");
+            }
+            catch (Exception ex)
+            {
+                await JSRuntime.InvokeVoidAsync("alert", $"Güncelleme sırasında bir hata oluştu: {ex.Message}");
+            }
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Kamyon bulunamadı, lütfen geçerli bir plaka girin.");
+        }
+    }
+
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/kantarList");
+    }
+}

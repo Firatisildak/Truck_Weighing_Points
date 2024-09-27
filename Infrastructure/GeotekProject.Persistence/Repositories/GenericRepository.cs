@@ -24,6 +24,7 @@ namespace GeotekProject.Persistence.Repositories
 
         public async Task<T> GetById(string id) => await Table.FirstOrDefaultAsync(s => s.Id == Guid.Parse(id));
 
+
         public async Task<bool> AddAsync(T entity)
         {
             await Table.AddAsync(entity);

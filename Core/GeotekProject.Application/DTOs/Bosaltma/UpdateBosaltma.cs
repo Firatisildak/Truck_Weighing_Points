@@ -10,6 +10,7 @@ namespace GeotekProject.Application.DTOs.Bosaltma
     {
         public Guid Id { get; set; }
         public bool BosaltmaDurumu { get; set; }
+        public string Plaka { get; set; }
         public Guid KamyonId { get; set; }
     }
 

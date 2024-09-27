@@ -35,14 +35,14 @@ namespace GeotekProject.API.Controllers
                 KamyonId = createKantar.KamyonId,
                 KamyonKg = createKantar.KamyonKg,
                 OnayDurum = createKantar.OnayDurum,
+                Plaka = createKantar.Plaka 
             };
             await _kantarRepository.AddAsync(kantar);
             return Ok();
-
         }
 
         [HttpPut("[action]")]
-        public async Task<IActionResult> UpdateBosaltma(UpdateKantar updateKantar)
+        public async Task<IActionResult> UpdateKantar(UpdateKantar updateKantar)
         {
             var kantar = new Kantar
             {
@@ -50,10 +50,12 @@ namespace GeotekProject.API.Controllers
                 KamyonId = updateKantar.KamyonId,
                 KamyonKg = updateKantar.KamyonKg,
                 OnayDurum = updateKantar.OnayDurum,
+                Plaka = updateKantar.Plaka  
             };
             await _kantarRepository.Update(kantar);
             return Ok();
         }
+
         [HttpDelete("[action]")]
         public async Task<bool> RemoveKantar(string id) => await _kantarRepository.RemoveAsync(id);
 

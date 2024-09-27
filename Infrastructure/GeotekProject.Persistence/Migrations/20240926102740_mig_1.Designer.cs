@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GeotekProject.Persistence.Migrations
 {
     [DbContext(typeof(GeotekProjectDbContext))]
-    [Migration("20240915072533_mig_1")]
+    [Migration("20240926102740_mig_1")]
     partial class mig_1
     {
         /// <inheritdoc />
@@ -39,6 +39,10 @@ namespace GeotekProject.Persistence.Migrations
 
                     b.Property<Guid>("KamyonId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Plaka")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -89,6 +93,10 @@ namespace GeotekProject.Persistence.Migrations
 
                     b.Property<bool>("OnayDurum")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Plaka")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

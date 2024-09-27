@@ -2,6 +2,7 @@
 @using BlazorWASM_GeotekProject.Models
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
 
 <h3>Yeni Boşaltma Kaydı Ekle</h3>
 <hr />
@@ -10,14 +11,14 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="BosaltmaDurumuInput">Boşaltma Durumu</label>
-                <select id="BosaltmaDurumuInput" class="form-control" @bind="newBosaltma.BosaltmaDurumu">
+                <select id="BosaltmaDurumuInput" class="form-control" @onchange="(e) => newBosaltma.BosaltmaDurumu = Convert.ToBoolean(e.Value)">
                     <option value="true">Boşaltıldı</option>
                     <option value="false">Boşaltılmadı</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="KamyonIdInput">Kamyon ID</label>
-                <input id="KamyonIdInput" class="form-control" @bind="newBosaltma.KamyonId" />
+                <label for="PlakaInput">Kamyon Plaka</label>
+                <input id="PlakaInput" class="form-control" @bind="newBosaltma.Plaka" />
             </div>
         </div>
     </div>
@@ -33,15 +34,34 @@
 
 @code {
     private Bosaltma newBosaltma = new Bosaltma();
+    private Kamyon[] kamyonList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
+        newBosaltma.Id = Guid.NewGuid();
+        newBosaltma.CreatedDate = DateTime.Now;
+    }
 
     private async Task AddBosaltmaInfo()
     {
-        await Http.PostAsJsonAsync("http://localhost:5129/api/Bosaltmas/CreateBosaltma", newBosaltma);
-        NavigationManager.NavigateTo("/bosaltmaList");
+        var selectedKamyon = kamyonList.FirstOrDefault(k => k.Plaka == newBosaltma.Plaka);
+        if (selectedKamyon != null)
+        {
+            newBosaltma.KamyonId = selectedKamyon.Id;
+            await Http.PostAsJsonAsync("http://localhost:5129/api/Bosaltmas/CreateBosaltma", newBosaltma);
+            await JSRuntime.InvokeVoidAsync("alert", "Kayıt Başarılı");
+            NavigationManager.NavigateTo("/bosaltmaList");
+        }
+        else
+        {
+            await JSRuntime.InvokeVoidAsync("alert", "Kamyon bulunamadı, lütfen geçerli bir plaka girin.");
+        }
+        
     }
 
     private void Cancel()
     {
-        NavigationManager.NavigateTo("/kamyonList");
+        NavigationManager.NavigateTo("/bosaltmaList");
     }
 }

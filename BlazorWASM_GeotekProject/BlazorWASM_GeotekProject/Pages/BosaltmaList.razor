@@ -16,21 +16,50 @@ else
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Kamyon ID</th>
+                <th>Oluşturma ID</th>
                 <th>Kamyon Plaka</th>
+                <th>Kamyon Hammede</th>
                 <th>Boşaltma Durumu</th>
+                <th>Onay Durumu</th>
+                <th>Oluşturulma Tarihi</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var bosaltma in bosaltmaList)
             {
+                var relatedBosaltma = kantarList.FirstOrDefault(b => b.KamyonId == bosaltma.KamyonId);
                 <tr>
-                    <td>@bosaltma.KamyonId</td>
-                    <td>@bosaltma.Kamyon.Plaka</td>
-                    <td>@(bosaltma.BosaltmaDurumu ? "Boşaltıldı" : "Boşaltılmadı")</td>
+                    <td>@bosaltma.Id</td>
+                    <td>@bosaltma.Plaka</td>
+                    <td>@bosaltma.Kamyon.Hammadde</td>
                     <td>
-                        <a href="/editBosaltma/@bosaltma.KamyonId" class="btn btn-primary">Düzenle</a>
-                        <a href="/deleteBosaltma/@bosaltma.KamyonId" class="btn btn-danger">Sil</a>
+                        @if (bosaltma.BosaltmaDurumu)
+                        {
+                            <span>Boşaltıldı.</span>
+                        }
+                        else
+                        {
+                            <span>Boşaltılmadı.</span>
+                        }
+                    </td>
+                    <td>
+                        @if (bosaltma.BosaltmaDurumu && relatedBosaltma != null && relatedBosaltma.OnayDurum)
+                        {
+                            <span>Onaylandı</span>
+                        }
+                        else if (!bosaltma.BosaltmaDurumu && relatedBosaltma != null && relatedBosaltma.OnayDurum)
+                        {
+                            <span>2. Onayı bekliyor</span>
+                        }
+                        else
+                        {
+                            <span>1. Onayı bekliyor</span>
+                        }
+                    </td>
+                    <td>@bosaltma.CreatedDate.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a href="/editBosaltma/@bosaltma.Id" class="btn btn-primary">Düzenle</a>
+                        <a href="/deleteBosaltma/@bosaltma.Id" class="btn btn-danger">Sil</a>
                     </td>
                 </tr>
             }
@@ -39,6 +68,7 @@ else
 }
 
 @code {
+    private Kantar[] kantarList;
     private Bosaltma[] bosaltmaList;
 
     protected override async Task OnInitializedAsync()
@@ -48,6 +78,7 @@ else
 
     private async Task LoadBosaltmaData()
     {
-        bosaltmaList = await Http.GetFromJsonAsync<Bosaltma[]>("http://localhost:5129/api/Bosaltmas/GetAllBosaltma");
+        kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantarlarWithKamyon");
+        bosaltmaList = await Http.GetFromJsonAsync<Bosaltma[]>("http://localhost:5129/api/Bosaltmas/GetAllBosaltmalarWithKamyon");
     }
 }

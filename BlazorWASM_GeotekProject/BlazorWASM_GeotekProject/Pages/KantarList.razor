@@ -2,9 +2,13 @@
 @using BlazorWASM_GeotekProject.Models
 @inject HttpClient Http
 
-<h3>Kamyon Listesi</h3>
+<h3>Kantar Listesi</h3>
 
-@if (kamyonList == null || kantarList == null)
+<p>
+    <a href="/addKantar" class="btn btn-info">Kantar Onayı</a>
+</p>
+
+@if (kantarList == null)
 {
     <p>Yükleniyor...</p>
 }
@@ -13,30 +17,41 @@ else
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Oluşturma ID</th>
+                <th>Kamyon Ağırlığı (Kg)</th>
                 <th>Plaka</th>
-                <th>Hammadde</th>
-                <th>Miktar</th>
+                <th>Kamyon Hammadde</th>
+                <th>Onay Durumu</th>
                 <th>Oluşturulma Tarihi</th>
-                <th>Kamyon Ağırlığı (Kg)</th> 
-                <th>Onay Durumu</th> 
             </tr>
         </thead>
         <tbody>
-            @foreach (var kamyon in kamyonList)
+            @foreach (var kantar in kantarList)
             {
-                var kantar = kantarList.FirstOrDefault(k => k.KamyonId == kamyon.Id);
+                var relatedBosaltma = bosaltmaList.FirstOrDefault(b => b.KamyonId == kantar.KamyonId);
                 <tr>
-                    <td>@kamyon.Id</td>
-                    <td>@kamyon.Plaka</td>
-                    <td>@kamyon.Hammadde</td>
-                    <td>@kamyon.Miktar</td>
-                    <td>@kamyon.CreatedDate.ToString("dd/MM/yyyy")</td>
-                    <td>@(kantar?.KamyonKg != null ? kantar.KamyonKg.ToString() : "N/A")</td>
-                    <td>@(kantar?.OnayDurum == true ? "Onaylı" : "Onaysız")</td>
+                    <td>@kantar.Id</td>
+                    <td>@kantar.KamyonKg</td>
+                    <td>@kantar.Plaka</td>
+                    <td>@kantar.Kamyon.Hammadde</td>
                     <td>
-                        <a href="/editkamyon/@kamyon.Id" class="btn btn-primary">Düzenle</a>
-                        <a href="/deletekamyon/@kamyon.Id" class="btn btn-danger">Sil</a>
+                        @if (kantar.OnayDurum && relatedBosaltma != null && relatedBosaltma.BosaltmaDurumu)
+                        {
+                            <span>Onaylandı</span>
+                        }
+                        else if (kantar.OnayDurum && (relatedBosaltma == null || (relatedBosaltma != null && !relatedBosaltma.BosaltmaDurumu)))
+                        {
+                            <span>2. Onayı bekliyor</span>
+                        }
+                        else
+                        {
+                            <span>1. Onayı bekliyor</span>
+                        }
+                    </td>
+                    <td>@kantar.CreatedDate.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a href="/editKantar/@kantar.Id" class="btn btn-primary">Düzenle</a>
+                        <a href="/deletekamyon/@kantar.Id" class="btn btn-danger">Sil</a>
                     </td>
                 </tr>
             }
@@ -45,8 +60,8 @@ else
 }
 
 @code {
-    private Kamyon[] kamyonList;
     private Kantar[] kantarList;
+    private Bosaltma[] bosaltmaList;
 
     protected override async Task OnInitializedAsync()
     {
@@ -55,7 +70,7 @@ else
 
     private async Task LoadData()
     {
-        kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
-        kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantar"); 
+        kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantarlarWithKamyon");
+        bosaltmaList = await Http.GetFromJsonAsync<Bosaltma[]>("http://localhost:5129/api/Bosaltmas/GetAllBosaltmalarWithKamyon");
     }
 }

@@ -19,7 +19,6 @@ namespace GeotekProject.API.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllBosaltma() => Ok(_bosaltmaRepository.GetAll());
 
-
         [HttpGet("[action]")]
         public async Task<IActionResult> GetByIdBosaltma(string id) => Ok(await _bosaltmaRepository.GetById(id));
 
@@ -32,11 +31,11 @@ namespace GeotekProject.API.Controllers
             var bosaltma = new Bosaltma
             {
                 BosaltmaDurumu = createBosaltma.BosaltmaDurumu,
+                Plaka = createBosaltma.Plaka,
                 KamyonId = createBosaltma.KamyonId
             };
             await _bosaltmaRepository.AddAsync(bosaltma);
             return Ok();
-
         }
 
         [HttpPut("[action]")]
@@ -46,6 +45,7 @@ namespace GeotekProject.API.Controllers
             {
                 Id = updateBosaltma.Id,
                 BosaltmaDurumu = updateBosaltma.BosaltmaDurumu,
+                Plaka = updateBosaltma.Plaka,
                 KamyonId = updateBosaltma.KamyonId,
             };
             await _bosaltmaRepository.Update(bosaltma);

@@ -37,6 +37,10 @@ namespace GeotekProject.Persistence.Migrations
                     b.Property<Guid>("KamyonId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Plaka")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("KamyonId");
@@ -86,6 +90,10 @@ namespace GeotekProject.Persistence.Migrations
 
                     b.Property<bool>("OnayDurum")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Plaka")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

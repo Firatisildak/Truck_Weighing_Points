@@ -27,6 +27,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <input type="button" class="btn btn-success" @onclick="AddKamyonInfo" value="Kaydet" />
+                <input type="button" class="btn btn-danger" @onclick="Cancel" value="İptal" />
             </div>
         </div>
     </div>
@@ -46,6 +47,11 @@
     {
         await Http.PostAsJsonAsync("http://localhost:5129/api/Kamyons/CreateKamyon", newKamyon);
         await JSRuntime.InvokeVoidAsync("alert", "Kayıt Başarılı");
+        NavigationManager.NavigateTo("/kamyonList");
        
+    }
+    private void Cancel()
+    {
+        NavigationManager.NavigateTo("/kamyonList");
     }
 }
