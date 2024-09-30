@@ -3,9 +3,6 @@
 @inject HttpClient Http
 
 <h3>Boşaltma Listesi</h3>
-<p>
-    <a href="/addBosaltma" class="btn btn-info">Yeni Boşaltma Ekle</a>
-</p>
 
 @if (bosaltmaList == null)
 {
@@ -18,22 +15,23 @@ else
             <tr>
                 <th>Oluşturma ID</th>
                 <th>Kamyon Plaka</th>
-                <th>Kamyon Hammede</th>
+                <th>Kamyon Hammadde</th>
                 <th>Boşaltma Durumu</th>
                 <th>Onay Durumu</th>
                 <th>Oluşturulma Tarihi</th>
+                <th>Onay Durumu Seç</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var bosaltma in bosaltmaList)
             {
-                var relatedBosaltma = kantarList.FirstOrDefault(b => b.KamyonId == bosaltma.KamyonId);
+                var relatedKantar = kantarList.FirstOrDefault(b => b.KamyonId == bosaltma.KamyonId);
                 <tr>
                     <td>@bosaltma.Id</td>
                     <td>@bosaltma.Plaka</td>
                     <td>@bosaltma.Kamyon.Hammadde</td>
                     <td>
-                        @if (bosaltma.BosaltmaDurumu)
+                        @if (bosaltma.BosaltmaDurumu && relatedKantar != null && relatedKantar.OnayDurum)
                         {
                             <span>Boşaltıldı.</span>
                         }
@@ -43,11 +41,11 @@ else
                         }
                     </td>
                     <td>
-                        @if (bosaltma.BosaltmaDurumu && relatedBosaltma != null && relatedBosaltma.OnayDurum)
+                        @if (bosaltma.BosaltmaDurumu && relatedKantar != null && relatedKantar.OnayDurum)
                         {
                             <span>Onaylandı</span>
                         }
-                        else if (!bosaltma.BosaltmaDurumu && relatedBosaltma != null && relatedBosaltma.OnayDurum)
+                        else if (!bosaltma.BosaltmaDurumu && relatedKantar != null && relatedKantar.OnayDurum)
                         {
                             <span>2. Onayı bekliyor</span>
                         }
@@ -58,8 +56,19 @@ else
                     </td>
                     <td>@bosaltma.CreatedDate.ToString("dd/MM/yyyy")</td>
                     <td>
-                        <a href="/editBosaltma/@bosaltma.Id" class="btn btn-primary">Düzenle</a>
-                        <a href="/deleteBosaltma/@bosaltma.Id" class="btn btn-danger">Sil</a>
+                        <div class="form-group">
+                            <label>Onay Durumu</label>
+                            <div class="form-check">
+                                <input type="radio" id="onayli_one_@bosaltma.Id" name="BosaltmaDurumu_@bosaltma.Id" class="form-check-input" value="true"
+                                       @onchange="(e) => UpdateBosaltmaDurumu(bosaltma, true)" checked="@bosaltma.BosaltmaDurumu" />
+                                <label class="form-check-label" for="onayli_one_@bosaltma.Id">Onaylı</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="onaysiz_one_@bosaltma.Id" name="BosaltmaDurumu_@bosaltma.Id" class="form-check-input" value="false"
+                                       @onchange="(e) => UpdateBosaltmaDurumu(bosaltma, false)" checked="@(!bosaltma.BosaltmaDurumu)" />
+                                <label class="form-check-label" for="onaysiz_one_@bosaltma.Id">Onaysız</label>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             }
@@ -70,15 +79,60 @@ else
 @code {
     private Kantar[] kantarList;
     private Bosaltma[] bosaltmaList;
+    private Kamyon[] kamyonList;
 
     protected override async Task OnInitializedAsync()
     {
         await LoadBosaltmaData();
+        await AddNewBosaltmaRecords();
     }
 
     private async Task LoadBosaltmaData()
     {
         kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantarlarWithKamyon");
         bosaltmaList = await Http.GetFromJsonAsync<Bosaltma[]>("http://localhost:5129/api/Bosaltmas/GetAllBosaltmalarWithKamyon");
+    }
+
+    private async Task AddNewBosaltmaRecords()
+    {
+        kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
+
+        if (kamyonList != null && kamyonList.Length > 0)
+        {
+            foreach (var kamyon in kamyonList)
+            {
+                var existingBosaltma = bosaltmaList.FirstOrDefault(b => b.Plaka == kamyon.Plaka);
+
+                if (existingBosaltma == null)
+                {
+                    var bosaltmaToAdd = new Bosaltma
+                        {
+                            Id = Guid.NewGuid(),
+                            Plaka = kamyon.Plaka,
+                            KamyonId = kamyon.Id,
+                            CreatedDate = DateTime.Now,
+                            BosaltmaDurumu = false
+                        };
+
+                    var response = await Http.PostAsJsonAsync("http://localhost:5129/api/Bosaltmas/CreateBosaltma", bosaltmaToAdd);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await LoadBosaltmaData();
+                    }
+                }
+            }
+        }
+    }
+
+    private async Task UpdateBosaltmaDurumu(Bosaltma bosaltma, bool isOnayli)
+    {
+        bosaltma.BosaltmaDurumu = isOnayli;
+        var response = await Http.PutAsJsonAsync($"http://localhost:5129/api/Bosaltmas/UpdateBosaltma/{bosaltma.Id}", bosaltma);
+
+        if (response.IsSuccessStatusCode)
+        {
+            await LoadBosaltmaData();
+        }
     }
 }

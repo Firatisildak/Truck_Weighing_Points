@@ -26,16 +26,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/AddBosaltma.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQm9zYWx0bWEucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/AddKamyon.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkS2FteW9uLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/AddKantar.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkS2FudGFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/BosaltmaList.razor]
@@ -46,20 +38,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlS2FteW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/EditBosaltma.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEJvc2FsdG1hLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/EditKamyon.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEthbXlvbi5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/EditKantar.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEthbnRhci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/firat/source/repos/BlazorWASM_GeotekProject/BlazorWASM_GeotekProject/Pages/KamyonControl.razor]

@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|c:\\users\\firat\\source\\repos\\blazorwasm_geotekproject\\blazorwasm_geotekproject\\models\\kantar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|solutionrelative:blazorwasm_geotekproject\\models\\kantar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|c:\\users\\firat\\source\\repos\\blazorwasm_geotekproject\\blazorwasm_geotekproject\\pages\\bosaltmalist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|solutionrelative:blazorwasm_geotekproject\\pages\\bosaltmalist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|c:\\users\\firat\\source\\repos\\blazorwasm_geotekproject\\blazorwasm_geotekproject\\pages\\addkantar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|solutionrelative:blazorwasm_geotekproject\\pages\\addkantar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|c:\\users\\firat\\source\\repos\\blazorwasm_geotekproject\\blazorwasm_geotekproject\\pages\\addkamyon.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|solutionrelative:blazorwasm_geotekproject\\pages\\addkamyon.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|c:\\users\\firat\\source\\repos\\blazorwasm_geotekproject\\blazorwasm_geotekproject\\pages\\kantarlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46FB33C3-9264-45C7-8E81-C91C98E39F29}|BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject.csproj|solutionrelative:blazorwasm_geotekproject\\pages\\kantarlist.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +23,33 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Kantar.cs",
-              "DocumentMoniker": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Models\\Kantar.cs",
-              "RelativeDocumentMoniker": "BlazorWASM_GeotekProject\\Models\\Kantar.cs",
-              "ToolTip": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Models\\Kantar.cs",
-              "RelativeToolTip": "BlazorWASM_GeotekProject\\Models\\Kantar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T13:36:23.917Z",
+              "Title": "BosaltmaList.razor",
+              "DocumentMoniker": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\BosaltmaList.razor",
+              "RelativeDocumentMoniker": "BlazorWASM_GeotekProject\\Pages\\BosaltmaList.razor",
+              "ToolTip": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\BosaltmaList.razor",
+              "RelativeToolTip": "BlazorWASM_GeotekProject\\Pages\\BosaltmaList.razor",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAA4AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-30T11:26:00.932Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 242,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddKantar.razor",
-              "DocumentMoniker": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\AddKantar.razor",
-              "RelativeDocumentMoniker": "BlazorWASM_GeotekProject\\Pages\\AddKantar.razor",
-              "ToolTip": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\AddKantar.razor",
-              "RelativeToolTip": "BlazorWASM_GeotekProject\\Pages\\AddKantar.razor",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAhwCUAAAAAAAAA",
+              "Title": "KantarList.razor",
+              "DocumentMoniker": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\KantarList.razor",
+              "RelativeDocumentMoniker": "BlazorWASM_GeotekProject\\Pages\\KantarList.razor",
+              "ToolTip": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\KantarList.razor",
+              "RelativeToolTip": "BlazorWASM_GeotekProject\\Pages\\KantarList.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-27T13:14:45.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddKamyon.razor",
-              "DocumentMoniker": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\AddKamyon.razor",
-              "RelativeDocumentMoniker": "BlazorWASM_GeotekProject\\Pages\\AddKamyon.razor",
-              "ToolTip": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\Pages\\AddKamyon.razor",
-              "RelativeToolTip": "BlazorWASM_GeotekProject\\Pages\\AddKamyon.razor",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACoAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-27T13:06:15.084Z",
+              "WhenOpened": "2024-09-28T10:30:52.583Z",
               "EditorCaption": ""
             }
           ]
