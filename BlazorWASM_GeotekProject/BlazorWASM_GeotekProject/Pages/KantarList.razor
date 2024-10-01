@@ -14,7 +14,6 @@ else
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Oluşturma ID</th>
                 <th>Kamyon Ağırlığı (Kg)</th>
                 <th>Plaka</th>
                 <th>Kamyon Hammadde</th>
@@ -28,7 +27,6 @@ else
             {
                 var relatedBosaltma = bosaltmaList.FirstOrDefault(b => b.KamyonId == kantar.KamyonId);
                 <tr>
-                    <td>@kantar.Id</td>
                     <td>@kantar.KamyonKg</td>
                     <td>@kantar.Plaka</td>
                     <td>@kantar.Kamyon.Hammadde</td>

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazorWASM_GeotekProject",
   "resources": {
-    "hash": "sha256-InloFjkf2NPGRENI3hWQztftjzlDDSPlmShNQD5r2CU=",
+    "hash": "sha256-WhS9ByNdk/86uVqfDVuhOYsX/1PRokdwxV4LLx/dO9w=",
     "jsModuleNative": {
       "dotnet.native.8.0.5.9ulragyv3n.js": "sha256-boyHe+0RMZDkzBKGhsrnXPhPg3oZ6UqJnTUzngJPjNY="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-XvLAB5IyfVSmj5aaGnPwgVFaaZz8jXmbN8WmeopiPBM=",
       "netstandard.wasm": "sha256-TbMssdnuTiKq1gjTPkpgROAuWN0uhvPnagvWR+wAgNs=",
       "System.Private.CoreLib.wasm": "sha256-sscg+Efk8ROPq+q4IVmhShzITuoOYvB8Bsc+Mp9vcSM=",
-      "BlazorWASM_GeotekProject.wasm": "sha256-JmG8Sl27uL00fiZCoc+/smEnIBDE/M+9tq0jsbRdhFA="
+      "BlazorWASM_GeotekProject.wasm": "sha256-qVXJBN8nS2HbNo3tVTthD3FNIvndbtoCo7w+cyEbRDE="
     },
     "pdb": {
-      "BlazorWASM_GeotekProject.pdb": "sha256-tSphhbN9PTn1/l57gY/C39GpiSZR9YbYk5JdjyoAZwU="
+      "BlazorWASM_GeotekProject.pdb": "sha256-NTrDQrDKNgj+YwH+9G3ScyrMPQEfTD8yTyXEOeVZe6I="
     }
   },
   "cacheBootResources": true,
