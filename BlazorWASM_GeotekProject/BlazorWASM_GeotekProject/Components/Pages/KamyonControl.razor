@@ -1,0 +1,48 @@
+﻿@page "/kamyonControl"
+@attribute [StreamRendering]
+@using BlazorWASM_GeotekProject.Components.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<h3>Kamyon Kontrol</h3>
+<hr />
+<form>
+    <div class="form-group">
+        <label for="PlakaControlInput">Plaka</label>
+        <input type="text" id="PlakaControlInput" class="form-control" @bind="searchPlaka" />
+    </div>
+    <div class="form-group">
+        <label for="HammaddeControlInput">Hammadde</label>
+        <input type="text" id="HammaddeControlInput" class="form-control" @bind="searchHammadde" />
+    </div>
+    <button type="button" class="btn btn-primary" @onclick="CheckKamyon">Kontrol Et</button>
+</form>
+
+@code {
+    private string searchPlaka;
+    private string searchHammadde;
+
+    private async Task CheckKamyon()
+    {
+        try
+        {
+            var kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
+
+            var foundKamyon = kamyonList.FirstOrDefault(k => k.Plaka == searchPlaka && k.Hammadde == searchHammadde);
+
+            if (foundKamyon != null)
+            {
+                NavigationManager.NavigateTo("/kamyonList");
+            }
+            else
+            {
+                await JSRuntime.InvokeVoidAsync("alert", "Aradığınız plaka ve hammadde bilgileriyle eşleşen kamyon bulunamadı.");
+            }
+        }
+        catch (Exception ex)
+        {
+            await JSRuntime.InvokeVoidAsync("alert", $"Bir hata oluştu: {ex.Message}");
+        }
+    }
+}

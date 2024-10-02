@@ -5,19 +5,19 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DD23874F-3F56-4C2F-BF12-95A8BD967437}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Domain", "Core\GeotekProject.Domain\GeotekProject.Domain.csproj", "{692E5AB7-8852-4E0B-A56B-60B00C6160B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeotekProject.Domain", "Core\GeotekProject.Domain\GeotekProject.Domain.csproj", "{692E5AB7-8852-4E0B-A56B-60B00C6160B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Application", "Core\GeotekProject.Application\GeotekProject.Application.csproj", "{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeotekProject.Application", "Core\GeotekProject.Application\GeotekProject.Application.csproj", "{C04BC855-BDDF-4A7A-A3A0-1AC528A9C87D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{3BA75634-6AC7-452A-A492-520B0E87E8CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Infrastructure", "Infrastructure\GeotekProject.Infrastructure\GeotekProject.Infrastructure.csproj", "{A3B436E3-C592-472C-B2F3-B91AC412C2E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeotekProject.Infrastructure", "Infrastructure\GeotekProject.Infrastructure\GeotekProject.Infrastructure.csproj", "{A3B436E3-C592-472C-B2F3-B91AC412C2E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.Persistence", "Infrastructure\GeotekProject.Persistence\GeotekProject.Persistence.csproj", "{04B6795B-A5DD-4225-A291-FBC0053D7262}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeotekProject.Persistence", "Infrastructure\GeotekProject.Persistence\GeotekProject.Persistence.csproj", "{04B6795B-A5DD-4225-A291-FBC0053D7262}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{95F1BDA5-54E2-497B-9C68-FF534CCE801D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeotekProject.API", "Presentation\GeotekProject.API\GeotekProject.API.csproj", "{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeotekProject.API", "Presentation\GeotekProject.API\GeotekProject.API.csproj", "{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

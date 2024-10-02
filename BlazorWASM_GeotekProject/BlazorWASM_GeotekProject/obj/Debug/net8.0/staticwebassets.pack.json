@@ -1,44 +1,40 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
-      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlazorWASM_GeotekProject.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BlazorWASM_GeotekProject.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\obj\\Debug\\net8.0\\compressed\\ieqz343kvk.gz",
-      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BlazorWASM_GeotekProject.styles.css",
-      "PackagePath": "staticwebassets\\BlazorWASM_GeotekProject.styles.css"
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\css\\app.css",
-      "PackagePath": "staticwebassets\\css\\app.css"
-    },
-    {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
-    },
-    {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
       "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\icon-192.png",
-      "PackagePath": "staticwebassets\\icon-192.png"
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\geoteklogo.png",
+      "PackagePath": "staticwebassets\\geoteklogo.png"
     },
     {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\index.html",
-      "PackagePath": "staticwebassets\\index.html"
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\kantarbir.png",
+      "PackagePath": "staticwebassets\\kantarbir.png"
     },
     {
-      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\sample-data\\weather.json",
-      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\kantariki.png",
+      "PackagePath": "staticwebassets\\kantariki.png"
+    },
+    {
+      "Id": "C:\\Users\\firat\\source\\repos\\BlazorWASM_GeotekProject\\BlazorWASM_GeotekProject\\wwwroot\\kantaruc.png",
+      "PackagePath": "staticwebassets\\kantaruc.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlazorWASM_GeotekProject.Microsoft.AspNetCore.StaticWebAssets.props",
