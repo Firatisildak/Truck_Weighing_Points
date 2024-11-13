@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeotekProject.API", "Presentation\GeotekProject.API\GeotekProject.API.csproj", "{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{E0FA0EE6-60E3-4E47-9160-9575D017F3DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASM_GeotekProject", "..\BlazorWASM_GeotekProject\BlazorWASM_GeotekProject\BlazorWASM_GeotekProject.csproj", "{619BDB84-598C-43FC-ACEC-C475DBA447B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619BDB84-598C-43FC-ACEC-C475DBA447B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619BDB84-598C-43FC-ACEC-C475DBA447B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619BDB84-598C-43FC-ACEC-C475DBA447B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619BDB84-598C-43FC-ACEC-C475DBA447B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{A3B436E3-C592-472C-B2F3-B91AC412C2E6} = {3BA75634-6AC7-452A-A492-520B0E87E8CC}
 		{04B6795B-A5DD-4225-A291-FBC0053D7262} = {3BA75634-6AC7-452A-A492-520B0E87E8CC}
 		{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948} = {95F1BDA5-54E2-497B-9C68-FF534CCE801D}
+		{619BDB84-598C-43FC-ACEC-C475DBA447B6} = {E0FA0EE6-60E3-4E47-9160-9575D017F3DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {615BA214-1BE1-48C1-BA76-25E51A599F69}
