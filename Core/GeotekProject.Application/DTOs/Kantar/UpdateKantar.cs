@@ -11,7 +11,7 @@ namespace GeotekProject.Application.DTOs.Kantar
         public Guid Id { get; set; }
         public int KamyonKg { get; set; }
         public bool OnayDurum { get; set; }
-        public string Plaka { get; set; }
+        public required string Plaka { get; set; }
         public Guid KamyonId { get; set; }
     }
 }

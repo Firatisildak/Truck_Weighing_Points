@@ -1,7 +1,9 @@
 ﻿@page "/"
 @attribute [StreamRendering]
 @using BlazorWASM_GeotekProject.Components.Models
+@using ClosedXML.Excel
 @inject HttpClient Http
+@inject IJSRuntime JS
 
 <PageTitle>Kamyon Listesi</PageTitle>
 
@@ -20,8 +22,19 @@
 <p>
     <a href="/addKamyon" class="btn btn-info">Yeni Kamyon Ekle</a>
 </p>
+    <MudButton Disabled="@exporting" @onclick="ExportToExcel" Variant="Variant.Filled" Color="Color.Info" StartIcon="@Icons.Custom.FileFormats.FileExcel">
+        @if (exporting)
+    {
+        <MudProgressCircular Class="ms-n1" Size="Size.Small" Indeterminate="true"></MudProgressCircular>
+        <MudText Class="ms-2">Processing..</MudText>
+    }
+    else
+    {
+        <MudText>Export Excel</MudText>
+    }
+    </MudButton>
 
-@if (kamyonList == null)
+    @if (kamyonList == null)
 {
     <p><em>Yükleniyor...</em></p>
 }
@@ -47,7 +60,7 @@ else
                     <td>
                         <a href="/editkamyon/@kamyon.Id" class="btn btn-primary">Düzenle</a>
                         <a href="/deletekamyon/@kamyon.Id" class="btn btn-danger">Sil</a>
-                        
+
                     </td>
                 </tr>
             }
@@ -57,6 +70,8 @@ else
 
 @code {
     private Kamyon[]? kamyonList;
+    bool importing = false;
+    bool exporting = false;
     private bool arrows = true;
     private bool bullets = true;
     private bool enableSwipeGesture = true;
@@ -65,12 +80,51 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        await Task.Delay(500); // Simulate async loading
+        await Task.Delay(500);
         await LoadKamyonData();
     }
 
     private async Task LoadKamyonData()
     {
         kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
+    }
+    private async Task<byte[]> CreateExcelFile()
+    {
+        if (kamyonList == null)
+        {
+            await LoadKamyonData();
+        }
+
+        using (XLWorkbook workbook = new())
+        {
+            var worksheet = workbook.Worksheets.Add("Kamyon Listesi");
+
+            worksheet.Cell(1, 1).Value = "Plaka";
+            worksheet.Cell(1, 2).Value = "Hammadde";
+            worksheet.Cell(1, 3).Value = "Miktar";
+            worksheet.Cell(1, 4).Value = "Oluşturulma Tarihi";
+
+            for (int i = 0; i < kamyonList.Length; i++)
+            {
+                worksheet.Cell(i + 2, 1).Value = kamyonList[i].Plaka;
+                worksheet.Cell(i + 2, 2).Value = kamyonList[i].Hammadde;
+                worksheet.Cell(i + 2, 3).Value = kamyonList[i].Miktar;
+                worksheet.Cell(i + 2, 4).Value = kamyonList[i].CreatedDate.ToString("dd/MM/yyyy");
+            }
+
+            using (var stream = new MemoryStream())
+            {
+                workbook.SaveAs(stream);
+                return stream.ToArray();
+            }
+        }
+    }
+
+    private async Task ExportToExcel()
+    {
+        exporting = true;
+        var excelBytes = await CreateExcelFile();
+        await JS.InvokeVoidAsync("downloadFileFromBytes", "Kamyon_Listesi.xlsx", excelBytes);
+        exporting = false;
     }
 }

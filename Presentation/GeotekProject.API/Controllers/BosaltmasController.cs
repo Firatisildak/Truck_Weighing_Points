@@ -8,13 +8,9 @@ namespace GeotekProject.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BosaltmasController : ControllerBase
+    public class BosaltmasController(IBosaltmaRepository bosaltmaRepository) : ControllerBase
     {
-        private readonly IBosaltmaRepository _bosaltmaRepository;
-        public BosaltmasController(IBosaltmaRepository bosaltmaRepository)
-        {
-            _bosaltmaRepository = bosaltmaRepository;
-        }
+        private readonly IBosaltmaRepository _bosaltmaRepository = bosaltmaRepository;
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllBosaltma() => Ok(_bosaltmaRepository.GetAll());
@@ -28,7 +24,7 @@ namespace GeotekProject.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateBosaltma(CreateBosaltma createBosaltma)
         {
-            var bosaltma = new Bosaltma
+            Bosaltma bosaltma = new()
             {
                 BosaltmaDurumu = createBosaltma.BosaltmaDurumu,
                 Plaka = createBosaltma.Plaka,
@@ -41,7 +37,7 @@ namespace GeotekProject.API.Controllers
         [HttpPut("[action]")]
         public async Task<IActionResult> UpdateBosaltma(UpdateBosaltma updateBosaltma)
         {
-            var bosaltma = new Bosaltma
+            Bosaltma bosaltma = new()
             {
                 Id = updateBosaltma.Id,
                 BosaltmaDurumu = updateBosaltma.BosaltmaDurumu,

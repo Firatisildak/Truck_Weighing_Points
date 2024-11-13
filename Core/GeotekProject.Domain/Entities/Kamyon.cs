@@ -9,8 +9,8 @@ namespace GeotekProject.Domain.Entities
 {
     public class Kamyon : BaseEntity
     {
-        public string Plaka { get; set; }
-        public string Hammadde { get; set; }
+        public required string Plaka { get; set; }
+        public required string Hammadde { get; set; }
         public int Miktar { get; set; }
     }
 }

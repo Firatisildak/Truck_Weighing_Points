@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace GeotekProject.Persistence.Context
 {
-    public class GeotekProjectDbContext : DbContext
+    public class GeotekProjectDbContext(DbContextOptions options) : DbContext(options)
     {
-        public GeotekProjectDbContext(DbContextOptions options) : base(options) { }
-
         public DbSet<Kamyon> Kamyons { get; set; }
         public DbSet<Kantar> Kantars { get; set; }
         public DbSet<Bosaltma> Bosaltmas { get; set; }

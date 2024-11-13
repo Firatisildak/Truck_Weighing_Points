@@ -38,8 +38,8 @@
 
 @code {
     [Parameter]
-    public string id { get; set; }
-    private Kamyon kamyon = new Kamyon();
+    public string? id { get; set; }
+    private Kamyon kamyon = new();
 
     protected override async Task OnInitializedAsync()
     {

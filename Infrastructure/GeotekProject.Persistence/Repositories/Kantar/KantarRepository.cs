@@ -10,11 +10,8 @@ using System.Threading.Tasks;
 
 namespace GeotekProject.Persistence.Repositories
 {
-    public class KantarRepository : GenericRepository<Kantar>, IKantarRepository
+    public class KantarRepository(GeotekProjectDbContext context) : GenericRepository<Kantar>(context), IKantarRepository
     {
-        public KantarRepository(GeotekProjectDbContext context) : base(context)
-        {
-        }
         public async Task<IList<Kantar>> GetAllWithKamyonAsync()
         {
             return await Table.Include(b => b.Kamyon).ToListAsync();

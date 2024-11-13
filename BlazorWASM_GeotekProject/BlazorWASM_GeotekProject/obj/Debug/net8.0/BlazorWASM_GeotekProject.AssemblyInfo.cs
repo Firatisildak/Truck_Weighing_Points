@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorWASM_GeotekProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+750fb1fd05d7d18e42870a5b2eeafe03f2a83326")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+148e21cba15d6435faac133778c38b492b151484")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorWASM_GeotekProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorWASM_GeotekProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

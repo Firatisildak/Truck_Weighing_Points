@@ -10,16 +10,12 @@ namespace GeotekProject.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class KantarsController : ControllerBase
+    public class KantarsController(IKantarRepository kantarRepository) : ControllerBase
     {
-        private readonly IKantarRepository _kantarRepository;
-        public KantarsController(IKantarRepository kantarRepository)
-        {
-            _kantarRepository = kantarRepository;
-        }
+        private readonly IKantarRepository _kantarRepository = kantarRepository;
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetAllKantar() => Ok(_kantarRepository.GetAll());
+        public Task<IActionResult> GetAllKantar() => Task.FromResult<IActionResult>(Ok(_kantarRepository.GetAll()));
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetByIdKantar(string id) => Ok(await _kantarRepository.GetById(id));
@@ -30,7 +26,7 @@ namespace GeotekProject.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateKantar(CreateKantar createKantar)
         {
-            var kantar = new Kantar
+            Kantar kantar = new()
             {
                 KamyonId = createKantar.KamyonId,
                 KamyonKg = createKantar.KamyonKg,
@@ -44,7 +40,7 @@ namespace GeotekProject.API.Controllers
         [HttpPut("[action]")]
         public async Task<IActionResult> UpdateKantar(UpdateKantar updateKantar)
         {
-            var kantar = new Kantar
+            Kantar kantar = new()
             {
                 Id = updateKantar.Id,
                 KamyonId = updateKantar.KamyonId,

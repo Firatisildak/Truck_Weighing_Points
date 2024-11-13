@@ -75,9 +75,9 @@ else
 }
 
 @code {
-    private Kantar[] kantarList;
-    private Bosaltma[] bosaltmaList;
-    private Kamyon[] kamyonList;
+    private Kantar[]? kantarList;
+    private Bosaltma[]? bosaltmaList;
+    private Kamyon[]? kamyonList;
 
     protected override async Task OnInitializedAsync()
     {
@@ -103,7 +103,7 @@ else
 
                 if (existingBosaltma == null)
                 {
-                    var bosaltmaToAdd = new Bosaltma
+                    Bosaltma bosaltmaToAdd = new()
                         {
                             Id = Guid.NewGuid(),
                             Plaka = kamyon.Plaka,

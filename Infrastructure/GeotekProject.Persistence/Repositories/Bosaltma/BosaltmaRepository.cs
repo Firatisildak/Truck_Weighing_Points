@@ -11,11 +11,8 @@ using System.Threading.Tasks;
 
 namespace GeotekProject.Persistence.Repositories
 {
-    public class BosaltmaRepository : GenericRepository<Bosaltma>, IBosaltmaRepository
+    public class BosaltmaRepository(GeotekProjectDbContext context) : GenericRepository<Bosaltma>(context), IBosaltmaRepository
     {
-        public BosaltmaRepository(GeotekProjectDbContext context) : base(context)
-        {
-        }
         public async Task<IList<Bosaltma>> GetAllWithKamyonAsync()
         {
             return await Table.Include(b => b.Kamyon).ToListAsync();

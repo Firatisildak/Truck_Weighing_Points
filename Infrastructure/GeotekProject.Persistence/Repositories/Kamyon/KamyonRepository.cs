@@ -9,10 +9,7 @@ using System.Threading.Tasks;
 
 namespace GeotekProject.Persistence.Repositories
 {
-    public class KamyonRepository : GenericRepository<Kamyon>, IKamyonRepository
+    public class KamyonRepository(GeotekProjectDbContext context) : GenericRepository<Kamyon>(context), IKamyonRepository
     {
-        public KamyonRepository(GeotekProjectDbContext context) : base(context)
-        {
-        }
     }
 }

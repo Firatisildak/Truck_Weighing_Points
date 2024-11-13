@@ -7,17 +7,12 @@ namespace GeotekProject.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class KamyonsController : ControllerBase
+    public class KamyonsController(IKamyonRepository kamyonRepository) : ControllerBase
     {
-        private readonly IKamyonRepository _kamyonRepository;
-        public KamyonsController(IKamyonRepository kamyonRepository)
-        {
-            _kamyonRepository = kamyonRepository;
-        }
+        private readonly IKamyonRepository _kamyonRepository = kamyonRepository;
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetAllKamyon() => Ok(_kamyonRepository.GetAll());
-
+        public Task<IActionResult> GetAllKamyon() => Task.FromResult<IActionResult>(Ok(_kamyonRepository.GetAll()));
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetByIdKamyon(string id) => Ok(await _kamyonRepository.GetById(id));

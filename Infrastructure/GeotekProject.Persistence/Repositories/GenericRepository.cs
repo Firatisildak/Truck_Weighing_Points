@@ -9,14 +9,9 @@ using System.Threading.Tasks;
 
 namespace GeotekProject.Persistence.Repositories
 {
-    public class GenericRepository<T> : IRepository<T> where T : BaseEntity
+    public class GenericRepository<T>(GeotekProjectDbContext context) : IRepository<T> where T : BaseEntity
     {
-        private readonly GeotekProjectDbContext _context;
-
-        public GenericRepository(GeotekProjectDbContext context)
-        {
-            _context = context;
-        }
+        private readonly GeotekProjectDbContext _context = context;
 
         public DbSet<T> Table => _context.Set<T>();
 

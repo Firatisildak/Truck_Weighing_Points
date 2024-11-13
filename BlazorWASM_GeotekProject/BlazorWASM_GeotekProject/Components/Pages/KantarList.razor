@@ -67,9 +67,9 @@ else
 }
 
 @code {
-    private Kantar[] kantarList;
-    private Bosaltma[] bosaltmaList;
-    private Kamyon[] kamyonList;
+    private Kantar[]? kantarList;
+    private Bosaltma[]? bosaltmaList;
+    private Kamyon[]? kamyonList;
 
     protected override async Task OnInitializedAsync()
     {
@@ -95,7 +95,7 @@ else
 
                 if (existingKantar == null)
                 {
-                    var kantarToAdd = new Kantar
+                    Kantar kantarToAdd = new()
                         {
                             Id = Guid.NewGuid(),
                             KamyonKg = kamyon.Miktar,
