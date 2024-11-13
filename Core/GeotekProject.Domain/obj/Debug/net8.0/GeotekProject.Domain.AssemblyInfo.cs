@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeotekProject.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e76448f7d344909add2f853cac77622764f51e7a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+750fb1fd05d7d18e42870a5b2eeafe03f2a83326")]
 [assembly: System.Reflection.AssemblyProductAttribute("GeotekProject.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GeotekProject.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

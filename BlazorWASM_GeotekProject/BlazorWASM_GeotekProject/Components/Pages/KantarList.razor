@@ -1,0 +1,132 @@
+﻿@page "/kantarList"
+@attribute [StreamRendering]
+@using BlazorWASM_GeotekProject.Components.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+
+@if (kantarList == null)
+{
+    <p>Yükleniyor...</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Kamyon Ağırlığı (Kg)</th>
+                <th>Plaka</th>
+                <th>Kamyon Hammadde</th>
+                <th>Onay Durumu</th>
+                <th>Oluşturulma Tarihi</th>
+                <th>Onay Durumu Seç</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var kantar in kantarList)
+            {
+                var relatedBosaltma = bosaltmaList.FirstOrDefault(b => b.KamyonId == kantar.KamyonId);
+                <tr>
+                    <td>@kantar.KamyonKg</td>
+                    <td>@kantar.Plaka</td>
+                    <td>@kantar.Kamyon.Hammadde</td>
+                    <td>
+                        @if (kantar.OnayDurum && relatedBosaltma != null && relatedBosaltma.BosaltmaDurumu)
+                        {
+                            <span>Onaylandı</span>
+                        }
+                        else if (kantar.OnayDurum && (relatedBosaltma == null || (relatedBosaltma != null && !relatedBosaltma.BosaltmaDurumu)))
+                        {
+                            <span>2. Onayı bekliyor</span>
+                        }
+                        else
+                        {
+                            <span>1. Onayı bekliyor</span>
+                        }
+                    </td>
+                    <td>@kantar.CreatedDate.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <div class="form-group">
+                            <label>Onay Durumu</label>
+                            <div class="form-check">
+                                <input type="radio" id="onayli_@kantar.Id" name="OnayDurum_@kantar.Id" class="form-check-input" value="true"
+                                       @onchange="(e) => UpdateOnayDurumu(kantar, true)" checked="@kantar.OnayDurum" />
+                                <label class="form-check-label" for="onayli_@kantar.Id">Onaylı</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="onaysiz_@kantar.Id" name="OnayDurum_@kantar.Id" class="form-check-input" value="false"
+                                       @onchange="(e) => UpdateOnayDurumu(kantar, false)" checked="@(!kantar.OnayDurum)" />
+                                <label class="form-check-label" for="onaysiz_@kantar.Id">Onaysız</label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Kantar[] kantarList;
+    private Bosaltma[] bosaltmaList;
+    private Kamyon[] kamyonList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadKantarData();
+        await AddNewKantarRecords();
+    }
+
+    private async Task LoadKantarData()
+    {
+        bosaltmaList = await Http.GetFromJsonAsync<Bosaltma[]>("http://localhost:5129/api/Bosaltmas/GetAllBosaltmalarWithKamyon");
+        kantarList = await Http.GetFromJsonAsync<Kantar[]>("http://localhost:5129/api/Kantars/GetAllKantarlarWithKamyon");
+    }
+
+    private async Task AddNewKantarRecords()
+    {
+        kamyonList = await Http.GetFromJsonAsync<Kamyon[]>("http://localhost:5129/api/Kamyons/GetAllKamyon");
+
+        if (kamyonList != null && kamyonList.Length > 0)
+        {
+            foreach (var kamyon in kamyonList)
+            {
+                var existingKantar = kantarList.FirstOrDefault(k => k.Plaka == kamyon.Plaka);
+
+                if (existingKantar == null)
+                {
+                    var kantarToAdd = new Kantar
+                        {
+                            Id = Guid.NewGuid(),
+                            KamyonKg = kamyon.Miktar,
+                            Plaka = kamyon.Plaka,
+                            KamyonId = kamyon.Id,
+                            CreatedDate = DateTime.Now
+                        };
+
+                    var response = await Http.PostAsJsonAsync("http://localhost:5129/api/Kantars/CreateKantar", kantarToAdd);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        await LoadKantarData();
+                    }
+                }
+            }
+        }
+    }
+
+    private async Task UpdateOnayDurumu(Kantar kantar, bool isOnayli)
+    {
+        kantar.OnayDurum = isOnayli;
+        var response = await Http.PutAsJsonAsync($"http://localhost:5129/api/Kantars/UpdateKantar/{kantar.Id}", kantar);
+
+        if (!response.IsSuccessStatusCode)
+        {
+            Console.WriteLine($"Hata: {response.StatusCode}, {await response.Content.ReadAsStringAsync()}");
+        }
+        else
+        {
+            await LoadKantarData();
+        }
+    }
+}
