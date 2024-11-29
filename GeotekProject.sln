@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeotekProject.API", "Presentation\GeotekProject.API\GeotekProject.API.csproj", "{F23D8EAB-24A0-4D3E-AB95-B47FF63F7948}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{E0FA0EE6-60E3-4E47-9160-9575D017F3DB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebUI", "WebUI", "{E0FA0EE6-60E3-4E47-9160-9575D017F3DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWASM_GeotekProject", "BlazorWASM_GeotekProject\BlazorWASM_GeotekProject\BlazorWASM_GeotekProject.csproj", "{73BCB36D-37A6-428B-90B8-9EEEFE3CA700}"
 EndProject
