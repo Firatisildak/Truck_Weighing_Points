@@ -3,7 +3,7 @@
 
 ## Project Description 
 
-This project is a web application that manages truck registration, weighbridge processes, and unloading operations. The application is built using **Blazor WASM** for the front end, **Blazor Server or ASP.NET Core** for the back end, and **Clean Architecture**. **MS SQL Express** is used for the database, and the feature to export the truck list to an Excel file is implemented using **ClosedXML** technology.
+This project is a web application that manages truck registration, weighbridge processes, and unloading operations. The application is built using **Blazor WASM** for the front end, **ASP.NET Core** for the back end, and **Clean Architecture**. **MS SQL Express** is used for the database, and the feature to export the truck list to an Excel file is implemented using **ClosedXML** technology.
 
 ### Workflow
 1. **Registration**: The truck arrives and is registered.
@@ -75,7 +75,7 @@ public class Truck
 ```
 ## Proje Açıklaması
 
-Bu proje, kamyonların kaydı, kantar işlemleri ve boşaltma işlemlerini yöneten bir web uygulamasıdır. Uygulama **Blazor WASM** (ön yüz), **Blazor Server veya ASP.NET Core** (arka yüz), ve **Clean Architecture** mimarisi kullanılarak geliştirilmiştir. Veritabanı olarak **MS SQL Express** kullanılmıştır. Ayrıca, **ClosedXML** teknolojisi ile kamyon listesini Excel dosyasına dönüştürme özelliği de eklenmiştir.
+Bu proje, kamyonların kaydı, kantar işlemleri ve boşaltma işlemlerini yöneten bir web uygulamasıdır. Uygulama **Blazor WASM** (ön yüz), **ASP.NET Core** (arka yüz), ve **Clean Architecture** mimarisi kullanılarak geliştirilmiştir. Veritabanı olarak **MS SQL Express** kullanılmıştır. Ayrıca, **ClosedXML** teknolojisi ile kamyon listesini Excel dosyasına dönüştürme özelliği de eklenmiştir.
 
 ### Projenin Akışı
 1. **Kayıt**: Kamyon gelir ve kaydı yapılır.
