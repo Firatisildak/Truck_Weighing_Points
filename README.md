@@ -14,7 +14,7 @@ This project is a web application that manages truck registration, weighbridge p
 
 ### Technologies Used
 - **Frontend**: Blazor WASM
-- **Backend**: Blazor Server or ASP.NET Core
+- **Backend**: ASP.NET Core
 - **Database**: MS SQL Express
 - **Architecture**: Clean Architecture, Repository Pattern
 - **Excel Export**: ClosedXML
